@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
+const bookmarkRouter = require('./bookRouter')
 
 const app = express()
 
@@ -19,6 +20,8 @@ app.get('/', (req, res) => {
     res.send('Hello, boilerplate!')
     
 })
+
+app.use(bookmarkRouter)
 
 app.use(function errorHandler(error, req, res, next) {
     let response
