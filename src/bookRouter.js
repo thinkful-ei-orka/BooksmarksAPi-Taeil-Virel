@@ -1,5 +1,6 @@
 const { v4: uuid } = require('uuid');
 const bookmarksRouter = require('express').Router();
+const logger = require('./logger');
 
 const bookmarks = [
     {
